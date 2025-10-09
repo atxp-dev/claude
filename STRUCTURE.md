@@ -5,7 +5,7 @@ This document explains the structure of the ATXP plugin marketplace repository.
 ## Directory Layout
 
 ```
-atxp/claude/
+atxp-dev/claude/
 │
 ├── .claude-plugin/
 │   └── marketplace.json          # Marketplace manifest - defines the marketplace
@@ -37,7 +37,7 @@ atxp/claude/
 #### `.claude-plugin/marketplace.json`
 Defines the marketplace itself. This is what Claude Code reads when users run:
 ```bash
-/plugin marketplace add atxp/claude
+/plugin marketplace add atxp-dev/claude
 ```
 
 Contains:
@@ -112,7 +112,7 @@ Version history:
 
 ### Installation Flow
 
-1. **User adds marketplace**: `/plugin marketplace add atxp/claude`
+1. **User adds marketplace**: `/plugin marketplace add atxp-dev/claude`
    - Claude Code reads `.claude-plugin/marketplace.json`
    - Marketplace is added to available sources
 

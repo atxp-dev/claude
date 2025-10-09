@@ -6,7 +6,7 @@ This document provides practical examples of using the ATXP plugin in Claude Cod
 
 ```bash
 # Add the marketplace
-/plugin marketplace add atxp/claude
+/plugin marketplace add atxp-dev/claude
 
 # Install the ATXP plugin
 /plugin install atxp@atxp-claude

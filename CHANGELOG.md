@@ -32,5 +32,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Automatic proxy billing
 - Zero-configuration setup for all ATXP services
 
-[1.0.0]: https://github.com/atxp/claude/releases/tag/v1.0.0
+[1.0.0]: https://github.com/atxp-dev/claude/releases/tag/v1.0.0
 

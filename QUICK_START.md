@@ -7,7 +7,7 @@ Get up and running with ATXP in Claude Code in 3 simple steps!
 ### Step 1: Add the Marketplace
 
 ```bash
-/plugin marketplace add atxp/claude
+/plugin marketplace add atxp-dev/claude
 ```
 
 ### Step 2: Install the Plugin

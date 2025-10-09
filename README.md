@@ -7,7 +7,7 @@ This repository provides a [Claude Code plugin marketplace](https://docs.claude.
 ### 1. Add the Marketplace
 
 ```bash
-/plugin marketplace add atxp/claude
+/plugin marketplace add atxp-dev/claude
 ```
 
 ### 2. Install the ATXP Plugin

@@ -7,7 +7,7 @@ This plugin provides seamless access to all ATXP MCP servers with simplified aut
 Install this plugin from the ATXP marketplace:
 
 ```bash
-/plugin marketplace add atxp/claude
+/plugin marketplace add atxp-dev/claude
 /plugin install atxp@atxp-claude
 ```
 
