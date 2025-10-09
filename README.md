@@ -28,15 +28,19 @@ You can find your connection string in your [ATXP dashboard](https://atxp.ai).
 
 ## What's Included
 
-The ATXP plugin bundles all ATXP MCP servers:
+The ATXP plugin bundles official ATXP MCP servers:
 
-- **atxp-fetch** - Web scraping and HTTP requests
-- **atxp-image** - Image generation and manipulation
-- **atxp-memory** - Persistent memory and storage
-- **atxp-browse** - Browser automation
-- **atxp-search** - Web search capabilities
-- **atxp-vision** - Computer vision and image analysis
-- **atxp-text** - Text processing and analysis
+- **atxp-browse** - Browser automation and capture
+- **atxp-crawl** - Crawl and extract page content at scale
+- **atxp-search** - Web search with structured results
+- **atxp-research** - Topic research with sources and citations
+- **atxp-database** - PostgreSQL management and SQL execution
+- **atxp-filestore** - Store and retrieve files
+- **atxp-image** - Image generation
+- **atxp-music** - Music generation
+- **atxp-video** - Video generation
+- **atxp-code** - Execute code in a sandbox
+- **atxp-x-live-search** - Search X (Twitter) with filters
 
 ## Features
 
@@ -50,7 +54,7 @@ When you set your connection string, all ATXP MCP servers automatically use the 
 
 ### 🚀 Zero Configuration
 
-All MCP servers are pre-configured and ready to use. Just install the plugin, set your auth, and start building!
+All MCP servers are configured as remote HTTP servers per Claude MCP spec and ready to use. Set your auth and start building!
 
 ## Example Usage
 
@@ -60,7 +64,7 @@ After installation and authentication, you can use any ATXP tool naturally in Cl
 Generate an image of a sunset over mountains
 ```
 
-Claude Code will automatically use the `atxp-image` MCP server to generate your image.
+Claude Code will automatically use the `atxp-image` MCP server (HTTP) to generate your image.
 
 ```
 Search the web for the latest news about AI

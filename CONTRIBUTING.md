@@ -24,17 +24,16 @@ Thank you for your interest in contributing to the ATXP plugin marketplace!
 
 ### Adding New MCP Servers
 
-If ATXP releases new MCP servers, add them to `atxp-plugin/.mcp.json`:
+If ATXP releases new MCP servers, add them to `atxp-plugin/.mcp.json` as HTTP servers:
 
 ```json
 {
   "mcpServers": {
     "atxp-new-server": {
-      "command": "npx",
-      "args": ["-y", "@atxp/mcp-new-server@latest"],
+      "type": "http",
+      "url": "${ATXP_MCP_BASE_URL:-https://mcp.atxp.ai}/new-server",
       "env": {
-        "ATXP_CONNECTION_STRING": "${ATXP_CONNECTION_STRING:-}",
-        "ATXP_PROXY_ENABLED": "true"
+        "ATXP_CONNECTION_STRING": "${ATXP_CONNECTION_STRING:-}"
       }
     }
   }

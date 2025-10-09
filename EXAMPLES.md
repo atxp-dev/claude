@@ -120,20 +120,18 @@ Uses `atxp-memory` to store information persistently.
 What was my API key for service X?
 ```
 
-## Fetch Examples
+## Crawl Examples
 
-### API Requests
-
-```
-Fetch the current weather data from https://api.weather.com/current
-```
-
-Uses `atxp-fetch` for HTTP requests.
-
-### Web Scraping
+### Crawl a Single Page
 
 ```
-Scrape the latest headlines from https://news.example.com
+Crawl https://example.com and extract the main article text
+```
+
+### Crawl Multiple Pages
+
+```
+Crawl https://docs.example.com starting at /guide with a limit of 5 pages and return titles and URLs
 ```
 
 ## Combined Workflows

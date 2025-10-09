@@ -30,13 +30,17 @@ Get up and running with ATXP in Claude Code in 3 simple steps!
 
 | MCP Server | What It Does | Example Use |
 |------------|--------------|-------------|
-| **atxp-fetch** | Web scraping & HTTP | "Fetch data from this API..." |
-| **atxp-image** | Image generation | "Generate an image of..." |
-| **atxp-memory** | Persistent storage | "Remember that..." |
 | **atxp-browse** | Browser automation | "Navigate to this site and..." |
+| **atxp-crawl** | Web crawling | "Extract text from these pages..." |
 | **atxp-search** | Web search | "Search for the latest..." |
-| **atxp-text** | Text processing | "Analyze this text..." |
-| **atxp-vision** | Computer vision | "What's in this image..." |
+| **atxp-research** | Topic research | "Research this topic with sources..." |
+| **atxp-database** | PostgreSQL | "Create a table and insert rows..." |
+| **atxp-filestore** | Files | "Store this file and return a URL..." |
+| **atxp-image** | Image generation | "Generate an image of..." |
+| **atxp-music** | Music generation | "Compose a song in this style..." |
+| **atxp-video** | Video generation | "Create a short video about..." |
+| **atxp-code** | Code execution | "Run this Python snippet..." |
+| **atxp-x-live-search** | X search | "Find posts by @handle this month..." |
 
 ---
 
@@ -88,7 +92,7 @@ Visit example.com and tell me the page title
 ✅ **Automatic authentication** - Set once, use everywhere  
 ✅ **Auto-billing via proxy** - No manual payment flows  
 ✅ **All ATXP tools** - Everything in one plugin  
-✅ **Always up-to-date** - Uses latest versions via npx  
+✅ **HTTP servers** - Configured per Claude MCP docs  
 
 ---
 

@@ -23,28 +23,37 @@ Get your connection string from your [ATXP dashboard](https://atxp.ai).
 
 ## Available MCP Servers
 
-This plugin includes the following ATXP MCP servers:
-
-### atxp-fetch
-Web scraping and HTTP request capabilities.
-
-### atxp-image
-Generate and manipulate images using AI.
-
-### atxp-memory
-Persistent memory and storage for your applications.
+This plugin includes these official ATXP MCP servers (HTTP):
 
 ### atxp-browse
-Browser automation for testing and scraping.
+Browser automation and capture (screenshots, recordings).
+
+### atxp-crawl
+Scrape and crawl websites to extract content.
 
 ### atxp-search
-Web search capabilities powered by ATXP.
+Web search with structured results.
 
-### atxp-text
-Advanced text processing and analysis.
+### atxp-research
+Deep research with synthesized answers and sources.
 
-### atxp-vision
-Computer vision and image analysis tools.
+### atxp-database
+Create Postgres databases and run SQL.
+
+### atxp-filestore
+Store, retrieve, and manage files.
+
+### atxp-image
+Generate images from prompts.
+
+### atxp-music
+Create music from lyrics and styles.
+
+### atxp-video
+Generate videos from text prompts.
+
+### atxp-code
+Execute code in a sandbox (JS, Python, TS).
 
 ## How It Works
 
@@ -54,9 +63,9 @@ Computer vision and image analysis tools.
 
 ## Technical Details
 
-- All MCP servers are installed via `npx` with the `@atxp/` package scope
-- The `ATXP_PROXY_ENABLED` environment variable is set to `true` for all servers
+- All MCP servers are configured as remote HTTP servers per Claude MCP docs
 - Connection string is passed via the `ATXP_CONNECTION_STRING` environment variable
+- Optional: set `ATXP_MCP_BASE_URL` to override the default `https://mcp.atxp.ai`
 
 ## Documentation
 

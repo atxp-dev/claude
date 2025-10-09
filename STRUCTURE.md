@@ -59,19 +59,14 @@ Implements the `/atxp-auth` command:
 - Explains proxy functionality
 
 #### `atxp-plugin/.mcp.json`
-Configures all ATXP MCP servers:
-- `atxp-fetch` - Web scraping and HTTP
-- `atxp-image` - Image generation
-- `atxp-memory` - Persistent storage
-- `atxp-browse` - Browser automation
-- `atxp-search` - Web search
-- `atxp-text` - Text processing
-- `atxp-vision` - Computer vision
+Configures official ATXP MCP servers (HTTP):
+- `atxp-browse`, `atxp-crawl`, `atxp-search`, `atxp-research`
+- `atxp-database`, `atxp-filestore`
+- `atxp-image`, `atxp-music`, `atxp-video`, `atxp-code`, `atxp-x-live-search`
 
 Each server is configured to:
-- Run via `npx` with latest version
-- Use the `ATXP_CONNECTION_STRING` environment variable
-- Enable proxy mode automatically
+- Use `type: http` with a URL under `${ATXP_MCP_BASE_URL:-https://mcp.atxp.ai}`
+- Pass `ATXP_CONNECTION_STRING` via environment
 
 ### Documentation Files
 
@@ -131,9 +126,8 @@ Version history:
 1. **User makes a request**: "Generate an image of a sunset"
 2. **Claude Code identifies tool**: Recognizes this needs `atxp-image`
 3. **Tool executes**: 
-   - `npx @atxp/mcp-image@latest` runs
-   - Uses `ATXP_CONNECTION_STRING` from environment
-   - Connects via ATXP proxy
+   - Calls remote HTTP server at `${ATXP_MCP_BASE_URL}/image`
+   - Uses `ATXP_CONNECTION_STRING` from environment via ATXP proxy
    - Billing handled automatically
 4. **Result returned**: Image is generated and shown to user
 
@@ -168,12 +162,9 @@ Version history:
 - `ATXP_CONNECTION_STRING`: User's ATXP connection string for authentication
 - `ATXP_PROXY_ENABLED`: Set to `"true"` to enable proxy mode for all servers
 
-### Package Management
+### Server Configuration
 
-All MCP servers use `npx` with:
-- `-y` flag for automatic installation
-- `@latest` to always get the newest version
-- `@atxp/` package scope for ATXP's official packages
+All MCP servers are remote HTTP servers per Claude MCP docs. No local `npx` installs are required.
 
 ### Proxy Mode
 
@@ -186,14 +177,12 @@ When `ATXP_CONNECTION_STRING` is set:
 ## Security Considerations
 
 - Connection strings are stored as environment variables (session-only)
-- MCP servers run in isolated processes via `npx`
 - All communication with ATXP uses secure HTTPS
 - No credentials are stored in files or version control
 
 ## Performance
 
 - MCP servers are lazy-loaded (only when needed)
-- `npx` caches packages after first use
 - Proxy adds minimal latency (~50-100ms)
 - Servers run in parallel when possible
 
