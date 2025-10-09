@@ -1,0 +1,10 @@
+{
+  "name": "atxp",
+  "description": "Access all ATXP MCP servers with simplified authentication and proxy support",
+  "version": "1.0.0",
+  "author": {
+    "name": "ATXP Team",
+    "url": "https://atxp.ai"
+  }
+}
+

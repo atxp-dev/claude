@@ -1,0 +1,82 @@
+{
+  "mcpServers": {
+    "atxp-fetch": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@atxp/mcp-fetch@latest"
+      ],
+      "env": {
+        "ATXP_CONNECTION_STRING": "${ATXP_CONNECTION_STRING:-}",
+        "ATXP_PROXY_ENABLED": "true"
+      }
+    },
+    "atxp-image": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@atxp/mcp-image@latest"
+      ],
+      "env": {
+        "ATXP_CONNECTION_STRING": "${ATXP_CONNECTION_STRING:-}",
+        "ATXP_PROXY_ENABLED": "true"
+      }
+    },
+    "atxp-memory": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@atxp/mcp-memory@latest"
+      ],
+      "env": {
+        "ATXP_CONNECTION_STRING": "${ATXP_CONNECTION_STRING:-}",
+        "ATXP_PROXY_ENABLED": "true"
+      }
+    },
+    "atxp-puppeteer": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@atxp/mcp-puppeteer@latest"
+      ],
+      "env": {
+        "ATXP_CONNECTION_STRING": "${ATXP_CONNECTION_STRING:-}",
+        "ATXP_PROXY_ENABLED": "true"
+      }
+    },
+    "atxp-search": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@atxp/mcp-search@latest"
+      ],
+      "env": {
+        "ATXP_CONNECTION_STRING": "${ATXP_CONNECTION_STRING:-}",
+        "ATXP_PROXY_ENABLED": "true"
+      }
+    },
+    "atxp-text": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@atxp/mcp-text@latest"
+      ],
+      "env": {
+        "ATXP_CONNECTION_STRING": "${ATXP_CONNECTION_STRING:-}",
+        "ATXP_PROXY_ENABLED": "true"
+      }
+    },
+    "atxp-vision": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@atxp/mcp-vision@latest"
+      ],
+      "env": {
+        "ATXP_CONNECTION_STRING": "${ATXP_CONNECTION_STRING:-}",
+        "ATXP_PROXY_ENABLED": "true"
+      }
+    }
+  }
+}
+

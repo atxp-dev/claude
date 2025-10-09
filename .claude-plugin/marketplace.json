@@ -1,0 +1,16 @@
+{
+  "name": "atxp-claude",
+  "owner": {
+    "name": "ATXP Team",
+    "url": "https://atxp.ai"
+  },
+  "description": "ATXP MCP servers and tools for Claude Code",
+  "plugins": [
+    {
+      "name": "atxp",
+      "source": "./atxp-plugin",
+      "description": "Access all ATXP MCP servers with simplified authentication and proxy support"
+    }
+  ]
+}
+
