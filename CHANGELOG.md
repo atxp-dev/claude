@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - atxp-fetch (Web scraping and HTTP)
   - atxp-image (Image generation)
   - atxp-memory (Persistent storage)
-  - atxp-puppeteer (Browser automation)
+  - atxp-browse (Browser automation)
   - atxp-search (Web search)
   - atxp-text (Text processing)
   - atxp-vision (Computer vision)

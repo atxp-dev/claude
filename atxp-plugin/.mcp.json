@@ -33,11 +33,11 @@
         "ATXP_PROXY_ENABLED": "true"
       }
     },
-    "atxp-puppeteer": {
+    "atxp-browse": {
       "command": "npx",
       "args": [
         "-y",
-        "@atxp/mcp-puppeteer@latest"
+        "@atxp/mcp-browse@latest"
       ],
       "env": {
         "ATXP_CONNECTION_STRING": "${ATXP_CONNECTION_STRING:-}",

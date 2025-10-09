@@ -61,10 +61,10 @@ Find academic papers about machine learning interpretability from the last year
 ### Web Scraping
 
 ```
-Use puppeteer to visit example.com and extract all the heading text
+Use the browser to visit example.com and extract all the heading text
 ```
 
-The `atxp-puppeteer` server will handle the browser automation.
+The `atxp-browse` server will handle the browser automation.
 
 ### Testing
 
@@ -159,7 +159,7 @@ Scrape the latest headlines from https://news.example.com
 ### Automated Testing
 
 ```
-1. Use puppeteer to navigate to my app
+1. Use the browser to navigate to my app
 2. Take screenshots of each page
 3. Analyze the screenshots for broken layouts
 4. Generate a test report

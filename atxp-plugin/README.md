@@ -34,7 +34,7 @@ Generate and manipulate images using AI.
 ### atxp-memory
 Persistent memory and storage for your applications.
 
-### atxp-puppeteer
+### atxp-browse
 Browser automation for testing and scraping.
 
 ### atxp-search

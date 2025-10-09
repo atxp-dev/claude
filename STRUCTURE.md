@@ -63,7 +63,7 @@ Configures all ATXP MCP servers:
 - `atxp-fetch` - Web scraping and HTTP
 - `atxp-image` - Image generation
 - `atxp-memory` - Persistent storage
-- `atxp-puppeteer` - Browser automation
+- `atxp-browse` - Browser automation
 - `atxp-search` - Web search
 - `atxp-text` - Text processing
 - `atxp-vision` - Computer vision

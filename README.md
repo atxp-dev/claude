@@ -33,7 +33,7 @@ The ATXP plugin bundles all ATXP MCP servers:
 - **atxp-fetch** - Web scraping and HTTP requests
 - **atxp-image** - Image generation and manipulation
 - **atxp-memory** - Persistent memory and storage
-- **atxp-puppeteer** - Browser automation
+- **atxp-browse** - Browser automation
 - **atxp-search** - Web search capabilities
 - **atxp-vision** - Computer vision and image analysis
 - **atxp-text** - Text processing and analysis

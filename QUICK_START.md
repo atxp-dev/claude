@@ -33,7 +33,7 @@ Get up and running with ATXP in Claude Code in 3 simple steps!
 | **atxp-fetch** | Web scraping & HTTP | "Fetch data from this API..." |
 | **atxp-image** | Image generation | "Generate an image of..." |
 | **atxp-memory** | Persistent storage | "Remember that..." |
-| **atxp-puppeteer** | Browser automation | "Navigate to this site and..." |
+| **atxp-browse** | Browser automation | "Navigate to this site and..." |
 | **atxp-search** | Web search | "Search for the latest..." |
 | **atxp-text** | Text processing | "Analyze this text..." |
 | **atxp-vision** | Computer vision | "What's in this image..." |
