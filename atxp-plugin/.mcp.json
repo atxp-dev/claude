@@ -2,77 +2,77 @@
   "mcpServers": {
     "atxp-browse": {
       "type": "http",
-      "url": "${ATXP_MCP_BASE_URL:-https://mcp.atxp.ai}/browse",
+      "url": "${ATXP_CONNECTION_STRING}&server=browse.mcp.atxp.ai",
       "env": {
         "ATXP_CONNECTION_STRING": "${ATXP_CONNECTION_STRING:-}"
       }
     },
     "atxp-crawl": {
       "type": "http",
-      "url": "${ATXP_MCP_BASE_URL:-https://mcp.atxp.ai}/crawl",
+      "url": "${ATXP_CONNECTION_STRING}&server=crawl.mcp.atxp.ai",
       "env": {
         "ATXP_CONNECTION_STRING": "${ATXP_CONNECTION_STRING:-}"
       }
     },
     "atxp-search": {
       "type": "http",
-      "url": "${ATXP_MCP_BASE_URL:-https://mcp.atxp.ai}/search",
+      "url": "${ATXP_CONNECTION_STRING}&server=search.mcp.atxp.ai",
       "env": {
         "ATXP_CONNECTION_STRING": "${ATXP_CONNECTION_STRING:-}"
       }
     },
     "atxp-research": {
       "type": "http",
-      "url": "${ATXP_MCP_BASE_URL:-https://mcp.atxp.ai}/research",
+      "url": "${ATXP_CONNECTION_STRING}&server=research.mcp.atxp.ai",
       "env": {
         "ATXP_CONNECTION_STRING": "${ATXP_CONNECTION_STRING:-}"
       }
     },
     "atxp-database": {
       "type": "http",
-      "url": "${ATXP_MCP_BASE_URL:-https://mcp.atxp.ai}/database",
+      "url": "${ATXP_CONNECTION_STRING}&server=database.mcp.atxp.ai",
       "env": {
         "ATXP_CONNECTION_STRING": "${ATXP_CONNECTION_STRING:-}"
       }
     },
     "atxp-filestore": {
       "type": "http",
-      "url": "${ATXP_MCP_BASE_URL:-https://mcp.atxp.ai}/filestore",
+      "url": "${ATXP_CONNECTION_STRING}&server=filestore.mcp.atxp.ai",
       "env": {
         "ATXP_CONNECTION_STRING": "${ATXP_CONNECTION_STRING:-}"
       }
     },
     "atxp-image": {
       "type": "http",
-      "url": "${ATXP_MCP_BASE_URL:-https://mcp.atxp.ai}/image",
+      "url": "${ATXP_CONNECTION_STRING}&server=image.mcp.atxp.ai",
       "env": {
         "ATXP_CONNECTION_STRING": "${ATXP_CONNECTION_STRING:-}"
       }
     },
     "atxp-music": {
       "type": "http",
-      "url": "${ATXP_MCP_BASE_URL:-https://mcp.atxp.ai}/music",
+      "url": "${ATXP_CONNECTION_STRING}&server=music.mcp.atxp.ai",
       "env": {
         "ATXP_CONNECTION_STRING": "${ATXP_CONNECTION_STRING:-}"
       }
     },
     "atxp-video": {
       "type": "http",
-      "url": "${ATXP_MCP_BASE_URL:-https://mcp.atxp.ai}/video",
+      "url": "${ATXP_CONNECTION_STRING}&server=video.mcp.atxp.ai",
       "env": {
         "ATXP_CONNECTION_STRING": "${ATXP_CONNECTION_STRING:-}"
       }
     },
     "atxp-code": {
       "type": "http",
-      "url": "${ATXP_MCP_BASE_URL:-https://mcp.atxp.ai}/code",
+      "url": "${ATXP_CONNECTION_STRING}&server=code.mcp.atxp.ai",
       "env": {
         "ATXP_CONNECTION_STRING": "${ATXP_CONNECTION_STRING:-}"
       }
     },
     "atxp-x-live-search": {
       "type": "http",
-      "url": "${ATXP_MCP_BASE_URL:-https://mcp.atxp.ai}/x-live-search",
+      "url": "${ATXP_CONNECTION_STRING}&server=x-live-search.mcp.atxp.ai",
       "env": {
         "ATXP_CONNECTION_STRING": "${ATXP_CONNECTION_STRING:-}"
       }
