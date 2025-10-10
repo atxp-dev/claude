@@ -34,3 +34,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 [1.0.0]: https://github.com/atxp-dev/claude/releases/tag/v1.0.0
 
+
+## [1.1.0] - 2025-10-10
+
+### Changed
+
+- Switched to official ATXP HTTP MCP servers and aligned documentation
+- Renamed `atxp-puppeteer` to `atxp-browse` to match official naming
+- Updated repository references from `atxp/claude` to `atxp-dev/claude`
+- Updated `EXAMPLES.md` to reflect available MCP servers:
+  - Removed: `atxp-text`, `atxp-vision`, `atxp-memory`
+  - Added examples for: `atxp-research`, `atxp-database`, `atxp-filestore`, `atxp-music`, `atxp-video`, `atxp-code`, `atxp-x-live-search`
+  - Adjusted combined workflows to use filestore instead of memory
+
+### Documentation
+
+- Clarified that all MCP servers are remote HTTP servers using the ATXP MCP Proxy
+- Linked to relevant docs for proxy and marketplace usage
+
+### Notes
+
+- No breaking API changes; users should run `/plugin update atxp@atxp-claude`
+
