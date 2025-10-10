@@ -56,6 +56,22 @@ Claude Code will use `atxp-search` to find up-to-date information.
 Find academic papers about machine learning interpretability from the last year
 ```
 
+## Research Examples
+
+### Topic Deep-Dive
+
+```
+Research the implications of CRISPR gene editing and provide 5 reputable sources
+```
+
+Claude Code will use `atxp-research` to synthesize an answer with citations.
+
+### Comparative Overview
+
+```
+Compare Rust vs Go for backend services. Include trade-offs and sources.
+```
+
 ## Browser Automation Examples
 
 ### Web Scraping
@@ -72,53 +88,77 @@ The `atxp-browse` server will handle the browser automation.
 Navigate to my website at https://mysite.com and take a screenshot
 ```
 
-## Text Processing Examples
+## Database Examples
 
-### Analysis
-
-```
-Analyze the sentiment and key themes in this text: [your text here]
-```
-
-Uses the `atxp-text` server for advanced text processing.
-
-### Summarization
+### Create a Database
 
 ```
-Summarize this article into 3 key bullet points: [article text]
+Create a Postgres database named analytics
 ```
 
-## Vision Examples
-
-### Image Analysis
+### Run SQL
 
 ```
-Analyze this image and describe what you see: [provide image]
+Run SQL: SELECT COUNT(*) FROM events WHERE type = 'signup';
 ```
 
-Uses the `atxp-vision` server for computer vision tasks.
+Uses `atxp-database` for Postgres management and queries.
 
-### OCR
+## Filestore Examples
 
-```
-Extract all text from this screenshot: [provide image]
-```
-
-## Memory Examples
-
-### Store Information
+### Save a File
 
 ```
-Remember that my API key for service X is ABC123
+Save this text as report.txt: [paste content]
 ```
 
-Uses `atxp-memory` to store information persistently.
-
-### Retrieve Information
+### Retrieve a File
 
 ```
-What was my API key for service X?
+Retrieve report.txt and show its contents
 ```
+
+Uses `atxp-filestore` to store and retrieve files.
+
+## Music Generation Examples
+
+### Compose Music
+
+```
+Compose a 30-second lo-fi hip-hop beat at 90 BPM with vinyl crackle
+```
+
+Uses `atxp-music` to generate audio.
+
+## Video Generation Examples
+
+### Create a Short Video
+
+```
+Create a 5-second looping video of a neon city at night in cyberpunk style
+```
+
+Uses `atxp-video` to generate video.
+
+## Code Execution Examples
+
+### Run Code
+
+```
+Execute Python to parse this JSON and return the name field: {"name":"Ada","id":1}
+```
+
+Uses `atxp-code` to run sandboxed code.
+
+## X Live Search Examples
+
+### Search X (Twitter)
+
+```
+Search X for posts about "TypeScript 5.7" from the last week with at least 100 likes
+```
+
+Uses `atxp-x-live-search` to query X with filters.
 
 ## Crawl Examples
 
@@ -142,7 +182,7 @@ Crawl https://docs.example.com starting at /guide with a limit of 5 pages and re
 1. Search for trending topics in tech
 2. Generate an image related to the top topic
 3. Write a blog post about it
-4. Save the draft to memory
+4. Save the draft to filestore
 ```
 
 ### Research and Analysis
