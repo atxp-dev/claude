@@ -4,22 +4,23 @@ This repository provides a [Claude Code plugin marketplace](https://docs.claude.
 
 ## Quick Start
 
-### 1. Add the Marketplace
+### Step 1: Authenticate
 
-```bash
+```zsh
+echo 'export ATXP_CONNECTION_STRING="<your-connection-string>"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+### Step 2: Add the Marketplace
+
+```zsh
 /plugin marketplace add atxp-dev/claude
 ```
 
-### 2. Install the ATXP Plugin
+### Step 3: Install the Plugin
 
 ```bash
-/plugin install atxp@atxp-claude
-```
-
-### 3. Set Your ATXP Connection String
-
-```bash
-/atxp-auth <your-connection-string>
+/plugin install kitchen-sink@atxp
 ```
 
 You can find your connection string in your [ATXP dashboard](https://atxp.ai).
@@ -43,10 +44,6 @@ The ATXP plugin bundles official ATXP MCP servers:
 - **atxp-x-live-search** - Search X (Twitter) with filters
 
 ## Features
-
-### 🔐 Simplified Authentication
-
-The `/atxp-auth` command sets your ATXP connection string as an environment variable, which is automatically used by all MCP servers.
 
 ### 💰 Automatic Billing via Proxy
 

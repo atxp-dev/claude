@@ -1,5 +1,5 @@
 {
-  "name": "atxp-claude",
+  "name": "atxp",
   "owner": {
     "name": "ATXP Team",
     "url": "https://atxp.ai"
@@ -7,8 +7,8 @@
   "description": "ATXP MCP servers and tools for Claude Code",
   "plugins": [
     {
-      "name": "atxp",
-      "source": "./atxp-plugin",
+      "name": "kitchen-sink",
+      "source": "./kitchen-sink",
       "description": "Access all ATXP MCP servers with simplified authentication and proxy support"
     }
   ]

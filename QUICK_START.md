@@ -4,22 +4,23 @@ Get up and running with ATXP in Claude Code in 3 simple steps!
 
 ## Installation
 
-### Step 1: Add the Marketplace
+### Step 1: Authenticate
 
-```bash
+```zsh
+echo 'export ATXP_CONNECTION_STRING="<your-connection-string>"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+### Step 2: Add the Marketplace
+
+```zsh
 /plugin marketplace add atxp-dev/claude
 ```
 
-### Step 2: Install the Plugin
+### Step 3: Install the Plugin
 
 ```bash
-/plugin install atxp@atxp-claude
-```
-
-### Step 3: Authenticate
-
-```bash
-/atxp-auth <your-connection-string>
+/plugin install kitchen-sink@atxp
 ```
 
 🎉 **You're done!** All ATXP MCP servers are now available.

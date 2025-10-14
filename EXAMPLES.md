@@ -4,15 +4,15 @@ This document provides practical examples of using the ATXP plugin in Claude Cod
 
 ## Initial Setup
 
-```bash
+```zsh
+echo 'export ATXP_CONNECTION_STRING="<your-connection-string>"' >> ~/.zshrc
+source ~/.zshrc
+
 # Add the marketplace
 /plugin marketplace add atxp-dev/claude
 
 # Install the ATXP plugin
-/plugin install atxp@atxp-claude
-
-# Set your connection string
-/atxp-auth your-connection-string-here
+/plugin install kitchen-sink@atxp
 ```
 
 ## Image Generation Examples
@@ -214,14 +214,7 @@ Crawl https://docs.example.com starting at /guide with a limit of 5 pages and re
 
 ### Connection Issues
 
-If you get authentication errors:
-
-```bash
-# Re-authenticate
-/atxp-auth your-connection-string-here
-```
-
-Then restart Claude Code.
+If you get authentication errors, make sure that you've defined `ATXP_CONNECTION_STRING` in your shell.
 
 ### Server Not Found
 
