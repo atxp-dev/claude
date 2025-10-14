@@ -66,3 +66,4 @@ This should result in taking the following JSON, replacing `${CONNECTION_STRING}
 
 After running this command, the project's `.mcp.json` will contain the ATXP MCP servers.
 
+Please let the user know that they will need to restart Claude Code for the changes to take effect.
