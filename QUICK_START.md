@@ -4,23 +4,19 @@ Get up and running with ATXP in Claude Code in 3 simple steps!
 
 ## Installation
 
-### Step 1: Authenticate
-
-```zsh
-echo 'export ATXP_CONNECTION_STRING="<your-connection-string>"' >> ~/.zshrc
-source ~/.zshrc
-```
-
-### Step 2: Add the Marketplace
-
-```zsh
-/plugin marketplace add atxp-dev/claude
-```
-
-### Step 3: Install the Plugin
+Install this plugin from the ATXP marketplace:
 
 ```bash
+/plugin marketplace add atxp-dev/claude
 /plugin install kitchen-sink@atxp
+```
+
+## Setup
+
+Run the setup command with your ATXP connection string (from your [ATXP dashboard](https://atxp.ai)):
+
+```bash
+/setup <connection-string>
 ```
 
 🎉 **You're done!** All ATXP MCP servers are now available.
@@ -74,7 +70,7 @@ Visit example.com and tell me the page title
 1. Visit [atxp.ai](https://atxp.ai)
 2. Log in to your dashboard
 3. Find your connection string in the API settings
-4. Copy and use with `/atxp-auth`
+4. Copy and use with `/setup`
 
 ---
 

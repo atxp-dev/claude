@@ -4,23 +4,21 @@ This repository provides a [Claude Code plugin marketplace](https://docs.claude.
 
 ## Quick Start
 
-### Step 1: Authenticate
+## Installation
 
-```zsh
-echo 'export ATXP_CONNECTION_STRING="<your-connection-string>"' >> ~/.zshrc
-source ~/.zshrc
-```
-
-### Step 2: Add the Marketplace
-
-```zsh
-/plugin marketplace add atxp-dev/claude
-```
-
-### Step 3: Install the Plugin
+Install this plugin from the ATXP marketplace:
 
 ```bash
+/plugin marketplace add atxp-dev/claude
 /plugin install kitchen-sink@atxp
+```
+
+## Setup
+
+Run the setup command with your ATXP connection string (from your [ATXP dashboard](https://atxp.ai)):
+
+```bash
+/setup <connection-string>
 ```
 
 You can find your connection string in your [ATXP dashboard](https://atxp.ai).

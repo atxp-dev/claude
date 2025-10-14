@@ -2,17 +2,6 @@
 
 This plugin provides seamless access to all ATXP MCP servers with simplified authentication and automatic proxy billing.
 
-## Configuration
-
-Set your ATXP connection string to enable authentication:
-
-```zsh
-echo 'export ATXP_CONNECTION_STRING="<your-connection-string>"' >> ~/.zshrc
-source ~/.zshrc
-```
-
-Get your connection string from your [ATXP dashboard](https://atxp.ai).
-
 ## Installation
 
 Install this plugin from the ATXP marketplace:
@@ -21,6 +10,16 @@ Install this plugin from the ATXP marketplace:
 /plugin marketplace add atxp-dev/claude
 /plugin install kitchen-sink@atxp
 ```
+
+## Setup
+
+Run the setup command with your ATXP connection string (from your [ATXP dashboard](https://atxp.ai)):
+
+```bash
+/setup <connection-string>
+```
+
+This will merge the ATXP MCP servers into your project's `.mcp.json` (creating it if missing).
 
 ## Available MCP Servers
 
@@ -56,16 +55,9 @@ Generate videos from text prompts.
 ### atxp-code
 Execute code in a sandbox (JS, Python, TS).
 
-## How It Works
-
-1. **Authentication**: Your connection string is stored as the `ATXP_CONNECTION_STRING` environment variable
-2. **Proxy Mode**: All MCP servers automatically use the ATXP MCP Proxy when the connection string is set
-3. **Billing**: Usage is automatically billed to your ATXP account via the proxy - no manual payment flows needed
-
 ## Technical Details
 
 - All MCP servers are configured as remote HTTP servers per Claude MCP docs
-- Connection string is passed via the `ATXP_CONNECTION_STRING` environment variable
 
 ## Documentation
 
