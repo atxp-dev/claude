@@ -10,6 +10,11 @@
       "name": "kitchen-sink",
       "source": "./kitchen-sink",
       "description": "Access all ATXP MCP servers with simplified authentication and proxy support"
+    },
+    {
+      "name": "cloud",
+      "source": "./cloud",
+      "description": "Deploy Claude agents to cloud.atxp.ai"
     }
   ]
 }
