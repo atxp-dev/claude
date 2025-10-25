@@ -13,6 +13,8 @@ This command packages and deploys the current working directory to cloud.atxp.ai
 - The connection string should contain a `connection_token` query parameter
 - `curl` and `jq` must be available in your PATH
 
+*IMPORTANT: When this command is complete, share the uploaded instance URL with the user! The URL is in this format: `https://cloud.atxp.ai/${instanceId}`.*
+
 ## Steps
 
 ### 1. Extract the connection token from ATXP_CONNECTION_STRING
@@ -116,6 +118,10 @@ else
   exit 1
 fi
 ```
+
+### 6. Remember to share the instance URL with the user!
+
+Again, the URL is in this format: `https://cloud.atxp.ai/${instanceId}`.
 
 ## Complete Script
 
