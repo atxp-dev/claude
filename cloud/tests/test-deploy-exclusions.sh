@@ -66,8 +66,8 @@ create_test_project() {
     TEST_DIR=$(mktemp -d /tmp/test-deploy-XXXXXX)
     cd "$TEST_DIR"
 
-    # Create directory structure
-    mkdir -p .atxp .aws .git config packages/foo/node_modules node_modules src
+    # Create directory structure (including deep nesting to test pattern depth)
+    mkdir -p .atxp .aws .git config packages/foo/node_modules node_modules src deep/nested/directory
 
     # Files that SHOULD be included
     echo "PROD_KEY=secret123" > .atxp/.env.production
@@ -75,11 +75,12 @@ create_test_project() {
     echo "console.log('app');" > index.js
     echo "export const foo = 'bar';" > src/app.js
 
-    # Files that SHOULD be excluded - credentials
+    # Files that SHOULD be excluded - credentials (including deeply nested)
     echo "LOCAL_KEY=local123" > .env.local
     echo "PROD_LOCAL=secret" > .env.production.local
     echo "DEV_KEY=dev123" > .env.development
     echo "TEST_KEY=test123" > .env.test
+    echo "DEEP_SECRET=secret" > deep/nested/directory/.env.local
     echo "//registry.npmjs.org/:_authToken=secret-token" > .npmrc
     echo "machine api.github.com login token password ghp_secret" > .netrc
     echo "aws_access_key_id=AKIAIOSFODNN7EXAMPLE" > .aws/credentials
@@ -160,11 +161,12 @@ run_tests() {
 
     log_info "Running exclusion tests..."
 
-    # Environment files
+    # Environment files (including deeply nested to verify pattern depth)
     assert_file_excluded ".env.local"
     assert_file_excluded ".env.production.local"
     assert_file_excluded ".env.development"
     assert_file_excluded ".env.test"
+    assert_file_excluded "deep/nested/directory/.env.local"
 
     # Credentials
     assert_file_excluded ".npmrc"
