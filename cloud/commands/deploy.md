@@ -34,16 +34,29 @@ fi
 ### 2. Create a zip file of the current directory
 
 ```bash
-# Create a temporary zip file
-ZIP_FILE="/tmp/deploy-$(date +%s)-$$.zip"
+# Create a temporary zip file (using mktemp for security, then rename to .zip)
+ZIP_FILE=$(mktemp /tmp/deploy-XXXXXX)
+rm "$ZIP_FILE"
+ZIP_FILE="${ZIP_FILE}.zip"
 echo "Creating deployment package..."
 
-# Zip the current directory, excluding common files
+# Zip the current directory, excluding common files and sensitive data
 zip -r "$ZIP_FILE" . \
   -x "*.git/*" \
   -x "node_modules/*" \
   -x ".atxp-instance" \
-  -x "*.DS_Store" \
+  -x ".DS_Store" \
+  -x "*/.DS_Store" \
+  -x ".env.local" \
+  -x "*/.env.local" \
+  -x ".env.development" \
+  -x "*/.env.development" \
+  -x ".env.test" \
+  -x "*/.env.test" \
+  -x ".npmrc" \
+  -x "*/.npmrc" \
+  -x ".aws/*" \
+  -x "*/.aws/*" \
   > /dev/null
 
 echo "Package created: $(du -h "$ZIP_FILE" | cut -f1)"
@@ -137,14 +150,27 @@ if [ -z "$CONNECTION_TOKEN" ]; then
   exit 1
 fi
 
-# Create zip file
-ZIP_FILE="/tmp/deploy-$(date +%s)-$$.zip"
+# Create zip file (using mktemp for security, then rename to .zip)
+ZIP_FILE=$(mktemp /tmp/deploy-XXXXXX)
+rm "$ZIP_FILE"
+ZIP_FILE="${ZIP_FILE}.zip"
 echo "Creating deployment package..."
 zip -r "$ZIP_FILE" . \
   -x "*.git/*" \
   -x "node_modules/*" \
   -x ".atxp-instance" \
-  -x "*.DS_Store" \
+  -x ".DS_Store" \
+  -x "*/.DS_Store" \
+  -x ".env.local" \
+  -x "*/.env.local" \
+  -x ".env.development" \
+  -x "*/.env.development" \
+  -x ".env.test" \
+  -x "*/.env.test" \
+  -x ".npmrc" \
+  -x "*/.npmrc" \
+  -x ".aws/*" \
+  -x "*/.aws/*" \
   > /dev/null
 echo "Package created: $(du -h "$ZIP_FILE" | cut -f1)"
 
