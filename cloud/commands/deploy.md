@@ -44,7 +44,6 @@ zip -r "$ZIP_FILE" . \
   -x "node_modules/*" \
   -x ".atxp-instance" \
   -x "*.DS_Store" \
-  -x "*/.*" \
   > /dev/null
 
 echo "Package created: $(du -h "$ZIP_FILE" | cut -f1)"
@@ -146,7 +145,6 @@ zip -r "$ZIP_FILE" . \
   -x "node_modules/*" \
   -x ".atxp-instance" \
   -x "*.DS_Store" \
-  -x "*/.*" \
   > /dev/null
 echo "Package created: $(du -h "$ZIP_FILE" | cut -f1)"
 
