@@ -35,10 +35,7 @@ fi
 
 ```bash
 # Create a temporary zip file (using mktemp for security)
-ZIP_FILE=$(mktemp /tmp/deploy-XXXXXX)
-mv "$ZIP_FILE" "${ZIP_FILE}.zip"
-ZIP_FILE="${ZIP_FILE}.zip"
-rm "$ZIP_FILE"  # Remove empty file before zipping
+ZIP_FILE="$(mktemp /tmp/deploy-XXXXXX).zip"
 echo "Creating deployment package..."
 
 # Zip the current directory, excluding common files and sensitive data
@@ -161,10 +158,7 @@ if [ -z "$CONNECTION_TOKEN" ]; then
 fi
 
 # Create zip file (using mktemp for security)
-ZIP_FILE=$(mktemp /tmp/deploy-XXXXXX)
-mv "$ZIP_FILE" "${ZIP_FILE}.zip"
-ZIP_FILE="${ZIP_FILE}.zip"
-rm "$ZIP_FILE"  # Remove empty file before zipping
+ZIP_FILE="$(mktemp /tmp/deploy-XXXXXX).zip"
 echo "Creating deployment package..."
 zip -r "$ZIP_FILE" . \
   -x ".git/*" \

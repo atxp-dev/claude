@@ -112,10 +112,7 @@ create_test_project() {
 create_zip() {
     log_info "Creating ZIP file..."
 
-    ZIP_FILE=$(mktemp /tmp/deploy-XXXXXX)
-    mv "$ZIP_FILE" "${ZIP_FILE}.zip"
-    ZIP_FILE="${ZIP_FILE}.zip"
-    rm "$ZIP_FILE"  # Remove empty file before zipping
+    ZIP_FILE="$(mktemp /tmp/deploy-XXXXXX).zip"
 
     zip -r "$ZIP_FILE" . \
       -x ".git/*" \
