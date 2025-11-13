@@ -34,29 +34,39 @@ fi
 ### 2. Create a zip file of the current directory
 
 ```bash
-# Create a temporary zip file (using mktemp for security, then rename to .zip)
+# Create a temporary zip file (using mktemp for security)
 ZIP_FILE=$(mktemp /tmp/deploy-XXXXXX)
-rm "$ZIP_FILE"
+mv "$ZIP_FILE" "${ZIP_FILE}.zip"
 ZIP_FILE="${ZIP_FILE}.zip"
+rm "$ZIP_FILE"  # Remove empty file before zipping
 echo "Creating deployment package..."
 
 # Zip the current directory, excluding common files and sensitive data
 zip -r "$ZIP_FILE" . \
-  -x "*.git/*" \
+  -x ".git/*" \
   -x "node_modules/*" \
+  -x "*/node_modules/*" \
   -x ".atxp-instance" \
   -x ".DS_Store" \
   -x "*/.DS_Store" \
   -x ".env.local" \
+  -x ".env.*.local" \
   -x "*/.env.local" \
+  -x "*/.env.*.local" \
   -x ".env.development" \
   -x "*/.env.development" \
   -x ".env.test" \
   -x "*/.env.test" \
   -x ".npmrc" \
   -x "*/.npmrc" \
+  -x ".netrc" \
+  -x "*/.netrc" \
   -x ".aws/*" \
   -x "*/.aws/*" \
+  -x "*.pem" \
+  -x "*.key" \
+  -x "*.p12" \
+  -x "*.pfx" \
   > /dev/null
 
 echo "Package created: $(du -h "$ZIP_FILE" | cut -f1)"
@@ -150,27 +160,37 @@ if [ -z "$CONNECTION_TOKEN" ]; then
   exit 1
 fi
 
-# Create zip file (using mktemp for security, then rename to .zip)
+# Create zip file (using mktemp for security)
 ZIP_FILE=$(mktemp /tmp/deploy-XXXXXX)
-rm "$ZIP_FILE"
+mv "$ZIP_FILE" "${ZIP_FILE}.zip"
 ZIP_FILE="${ZIP_FILE}.zip"
+rm "$ZIP_FILE"  # Remove empty file before zipping
 echo "Creating deployment package..."
 zip -r "$ZIP_FILE" . \
-  -x "*.git/*" \
+  -x ".git/*" \
   -x "node_modules/*" \
+  -x "*/node_modules/*" \
   -x ".atxp-instance" \
   -x ".DS_Store" \
   -x "*/.DS_Store" \
   -x ".env.local" \
+  -x ".env.*.local" \
   -x "*/.env.local" \
+  -x "*/.env.*.local" \
   -x ".env.development" \
   -x "*/.env.development" \
   -x ".env.test" \
   -x "*/.env.test" \
   -x ".npmrc" \
   -x "*/.npmrc" \
+  -x ".netrc" \
+  -x "*/.netrc" \
   -x ".aws/*" \
   -x "*/.aws/*" \
+  -x "*.pem" \
+  -x "*.key" \
+  -x "*.p12" \
+  -x "*.pfx" \
   > /dev/null
 echo "Package created: $(du -h "$ZIP_FILE" | cut -f1)"
 
