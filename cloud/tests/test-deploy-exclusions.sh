@@ -112,7 +112,9 @@ create_test_project() {
 create_zip() {
     log_info "Creating ZIP file..."
 
-    ZIP_FILE="$(mktemp /tmp/deploy-XXXXXX).zip"
+    TEMP_BASE=$(mktemp /tmp/deploy-XXXXXX)
+    ZIP_FILE="${TEMP_BASE}.zip"
+    rm "$TEMP_BASE"  # Remove the temporary placeholder
 
     zip -r "$ZIP_FILE" . \
       -x ".git/*" \
