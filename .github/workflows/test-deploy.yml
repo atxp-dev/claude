@@ -1,0 +1,40 @@
+name: Test Deploy Command
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'cloud/commands/deploy.md'
+      - 'cloud/tests/**'
+      - '.github/workflows/test-deploy.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'cloud/commands/deploy.md'
+      - 'cloud/tests/**'
+      - '.github/workflows/test-deploy.yml'
+
+jobs:
+  test-deploy-exclusions:
+    name: Test Deploy File Exclusions
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Run deploy exclusion tests
+      run: |
+        cd cloud
+        chmod +x tests/test-deploy-exclusions.sh
+        ./tests/test-deploy-exclusions.sh
+
+    - name: Test results summary
+      if: always()
+      run: |
+        if [ $? -eq 0 ]; then
+          echo "✅ All deploy exclusion tests passed"
+        else
+          echo "❌ Some deploy exclusion tests failed"
+          exit 1
+        fi
