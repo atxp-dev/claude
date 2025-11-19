@@ -27,6 +27,10 @@ You can find your connection string in your [ATXP dashboard](https://atxp.ai).
 
 ## What's Included
 
+This marketplace includes two plugins:
+
+### Kitchen Sink Plugin
+
 The ATXP plugin bundles official ATXP MCP servers:
 
 - **atxp-browse** - Browser automation and capture
@@ -40,6 +44,17 @@ The ATXP plugin bundles official ATXP MCP servers:
 - **atxp-video** - Video generation
 - **atxp-code** - Execute code in a sandbox
 - **atxp-x-live-search** - Search X (Twitter) with filters
+
+### Cloud Plugin
+
+Deploy your Claude Code agents to [cloud.atxp.ai](https://cloud.atxp.ai) with environment variable support:
+
+- **`/deploy`** - Deploy agents to the cloud for pay-per-use execution
+- **`/configure-env-var`** - Set environment variables (API keys, secrets)
+- **`/list-env-vars`** - View configured environment variables
+- **`/remove-env-var`** - Remove environment variables
+
+See the [Cloud Plugin README](cloud/README.md) for detailed documentation.
 
 ## Features
 
