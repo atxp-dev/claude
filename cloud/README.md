@@ -6,8 +6,14 @@ Deploy your Claude Code agents to [cloud.atxp.ai](https://cloud.atxp.ai) for pay
 
 - 🚀 **One-command deployment** - Deploy your agents with `/deploy`
 - 🔐 **Secure authentication** - Uses your ATXP connection string
-- ⚙️ **Environment variables** - Configure secrets and API keys
+- ⚙️ **Environment variables** - Configure secrets and API keys with 600 permissions
 - 🔄 **Update existing instances** - Seamlessly update deployed agents
+
+## Requirements
+
+- Bash 3.2+ (default on macOS and most Linux distributions)
+- Git (for deployment tracking)
+- Write access to project directory
 
 ## Quick Start
 
@@ -167,10 +173,15 @@ Use environment variables for:
 
 ### Security Best Practices
 
-1. **Never commit secrets to git** - `.atxp/.env.production` is in `.gitignore`
-2. **Use environment variables for all sensitive data** - Don't hardcode credentials
-3. **Rotate keys regularly** - Use `/configure-env-var` to update keys
-4. **Audit configured variables** - Use `/list-env-vars` to review
+1. **Never commit secrets to git** - `.atxp/.env.production` is automatically added to `.gitignore`
+2. **File permissions** - Files are created with `600` permissions (owner read/write only) to prevent access by other system users
+3. **Shell history exposure** - Be aware that secrets passed via command line are stored in shell history. For highly sensitive values:
+   - Manually edit `.atxp/.env.production` instead
+   - Use environment variables: `/configure-env-var API_KEY "$SECRET_FROM_ENV"`
+   - Clear history after use: `history -d $(history 1)`
+4. **Use environment variables for all sensitive data** - Don't hardcode credentials in code
+5. **Rotate keys regularly** - Use `/configure-env-var` to update keys
+6. **Audit configured variables** - Use `/list-env-vars` to review (values are masked)
 
 ### Manual Management
 
