@@ -27,8 +27,21 @@ Set API keys for external services:
 
 1. Creates `.atxp/.env.production` if it doesn't exist
 2. Adds or updates the environment variable in `KEY=VALUE` format
-3. The file will be included in your next `/deploy`
-4. Your deployed agent can access these variables at runtime
+3. Sets file permissions to `600` (owner read/write only)
+4. The file will be included in your next `/deploy`
+5. Your deployed agent can access these variables at runtime
+
+## Requirements
+
+- Bash 3.2+ (default on macOS and most Linux distributions)
+- Write access to current directory
+
+## Value Handling
+
+- **Empty values**: Not allowed. Use `/remove-env-var` to delete variables.
+- **Values with spaces**: Fully supported (e.g., `"Hello World"`)
+- **Values with special characters**: Supported including `=`, `:`, `/`, etc.
+- **Multiline values**: Not supported. Use base64 encoding if needed.
 
 ## Implementation
 
@@ -63,9 +76,12 @@ if [ -f "$ENV_FILE" ]; then
     if grep -q "^${KEY}=" "$ENV_FILE"; then
         # Update existing key
         # Use a temporary file for safety
-        TEMP_FILE=$(mktemp)
+        TEMP_FILE=$(mktemp) || {
+            echo "Error: Failed to create temporary file"
+            exit 1
+        }
         while IFS= read -r line; do
-            if echo "$line" | grep -q "^${KEY}="; then
+            if [[ "$line" =~ ^${KEY}= ]]; then
                 echo "${KEY}=${VALUE}"
             else
                 echo "$line"
@@ -81,8 +97,12 @@ if [ -f "$ENV_FILE" ]; then
 else
     # Create new file
     echo "${KEY}=${VALUE}" > "$ENV_FILE"
+    chmod 600 "$ENV_FILE"
     echo "✓ Created ${ENV_FILE} with ${KEY}"
 fi
+
+# Ensure restrictive permissions on existing file
+chmod 600 "$ENV_FILE" 2>/dev/null || true
 
 # Check if .gitignore exists and contains the env file
 GITIGNORE_WARNED=false
@@ -108,15 +128,20 @@ echo "  2. Deploy your agent: /deploy"
 
 ## Security Considerations
 
-⚠️ **Important:** The `.atxp/.env.production` file contains sensitive credentials and should never be committed to version control.
+⚠️ **Important Security Notes:**
 
-After using this command for the first time, add it to your `.gitignore`:
+1. **Git Protection**: The `.atxp/.env.production` file contains sensitive credentials and should never be committed to version control. Add it to your `.gitignore`:
+   ```bash
+   echo '.atxp/.env.production' >> .gitignore
+   ```
+   The command will warn you if this entry is missing.
 
-```bash
-echo '.atxp/.env.production' >> .gitignore
-```
+2. **Shell History**: When using this command, secrets are stored in your shell history. For highly sensitive values, consider:
+   - Manually editing `.atxp/.env.production` instead
+   - Clearing your shell history after use: `history -d $(history 1)`
+   - Using environment variables: `/configure-env-var API_KEY "$SECRET_FROM_ENV"`
 
-The command will warn you if this entry is missing.
+3. **File Permissions**: The file is automatically created with `600` permissions (owner read/write only) to prevent other system users from accessing secrets.
 
 ## File Format
 

@@ -61,8 +61,11 @@ if ! grep -q "^${KEY}=" "$ENV_FILE"; then
 fi
 
 # Create a temporary file and filter out the key
-TEMP_FILE=$(mktemp)
-grep -v "^${KEY}=" "$ENV_FILE" > "$TEMP_FILE"
+TEMP_FILE=$(mktemp) || {
+    echo "Error: Failed to create temporary file"
+    exit 1
+}
+grep -v "^${KEY}=" "$ENV_FILE" > "$TEMP_FILE" || true
 
 # Replace the original file
 mv "$TEMP_FILE" "$ENV_FILE"
